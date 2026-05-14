@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Wanning He</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Wanning He</a>
+    <div class="nav-links">
+      <a href="index.html">about</a>
+      <a href="research.html" class="active">research</a>
+      <a href="projects.html">projects</a>
+      <a href="cv.html">cv</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <h1>Research</h1>
+
+  <section style="margin-top: 2rem;">
+    <h2>Research Interests</h2>
+    <p>My research centers on <strong>multi-modal generative models</strong> and <strong>identity-aware visual perception</strong>. I'm interested in how diffusion models and multi-modal LLMs can be steered to produce controllable, identity-preserving edits of human images and video — for example, editing a person's expression without changing who they are. More broadly, I'm drawn to questions about the <em>support of representations</em>: when generative models fail to extrapolate, is it the architecture, or is it because the training distribution doesn't cover what we want to generate?</p>
+  </section>
+
+  <hr class="divider">
+
+  <section class="pub-section">
+    <h2>Publications</h2>
+
+    <div class="pub-year">2026</div>
+
+    <div class="pub-item">
+      <div class="pub-title">Beyond MoCap: Scaling Motion Tokenizers with Synthetic Human Motion for Generative Modeling</div>
+      <div class="pub-authors">Yiwen Yan, <span class="me">Wanning He</span>, Yu-Wing Tai</div>
+      <div class="pub-venue">Under review at NeurIPS 2026 <span class="pub-badge">Under Review</span></div>
+      <div class="pub-abstract">
+        Human motion generation has been bottlenecked by the narrow distribution of MoCap datasets — mostly walking, sitting, and simple interactions. We propose scaling the <em>support</em> of motion representations using large-scale synthetic human motion data, paired with a redesigned VQ-VAE tokenizer whose discrete codebook scales alongside the training distribution. Our approach yields consistent gains on text-to-motion and motion continuation, and integrates with existing frameworks such as MotionGPT. The takeaway: the bottleneck is in the representation's support, not the model architecture.
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Wanning He. Built with care, hosted on GitHub Pages.
+</footer>
+
+</body>
+</html>

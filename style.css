@@ -30,6 +30,11 @@ a {
 }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
 
+strong, b {
+  font-weight: 900;
+  color: var(--accent);
+}
+
 h1, h2, h3, h4 {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
@@ -156,6 +161,24 @@ main {
 .social a { color: var(--text-muted); }
 .social a:hover { color: var(--accent); }
 
+/* Hero variant — bigger + bolder, used right under bio */
+.social-hero {
+  justify-content: flex-start;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1.9rem;
+}
+.social-hero a {
+  color: var(--text);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.social-hero a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
 /* === Footer === */
 footer {
   text-align: center;
@@ -189,7 +212,7 @@ footer {
   font-weight: 400;
 }
 .pub-authors { font-size: 0.95rem; margin-bottom: 0.3rem; }
-.pub-authors .me { font-weight: 700; }
+.pub-authors .me { font-weight: 900; color: var(--accent); }
 .pub-venue {
   font-size: 0.9rem;
   font-style: italic;
@@ -263,6 +286,50 @@ footer {
   border: 1px solid var(--border);
 }
 
+/* === Life / videos === */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.video-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+/* Vertical (9:16) variant for YouTube Shorts / phone-shot videos */
+.video-wrap.short {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.video-wrap iframe,
+.video-wrap video,
+.video-wrap .video-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 1rem;
+}
+.video-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 /* === CV page === */
 .cv-download {
   display: inline-block;
@@ -298,6 +365,7 @@ footer {
   .profile { grid-template-columns: 1fr; text-align: center; }
   .profile-avatar { margin: 0 auto; width: 220px; height: 220px; }
   .project-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 1rem; }
   h1 { font-size: 2rem; }
   .profile-info .name { font-size: 2rem; }

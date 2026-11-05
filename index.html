@@ -1,83 +1,272 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wanning He</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wanning He</title>
+    <meta name="author" content="Wanning He">
+    <meta name="description" content="Wanning He — I build generative models of human motion, with sports as my testbed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+      /* additions on top of Jon Barron's stylesheet */
+      .slogan { text-align:center; font-style:italic; color:#555; margin:6px 0 14px; }
+      .thumb { width:200px; height:130px; position:relative; background:#fff; }
+      .thumb img, .thumb video { width:200px; height:130px; object-fit:contain; position:absolute; top:0; left:0; }
+      .thumb .two { width:200px; height:130px; opacity:0; }
+      .news td { padding:2px 0; vertical-align:top; }
+      .news .d { width:70px; font-weight:700; white-space:nowrap; }
+      .awards .d { width:50px; }
+      .awards .org { text-align:right; white-space:nowrap; color:#555; padding-left:12px; }
+      .life { display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; margin:10px 0 12px; }
+      .life figure { margin:0; }
+      .life figcaption { font-size:12px; color:#777; text-align:center; margin-top:3px; }
+      .life a, .life .ph { display:block; aspect-ratio:1/1; border-radius:6px; overflow:hidden; }
+      .life img { width:100%; height:100%; object-fit:cover; }
+      /* .ph = placeholder tile for a photo not yet added */
+      .life .ph { background:#f1f1ee; border:1px dashed #c9c9c2; color:#888; display:flex; align-items:center; justify-content:center; font-size:13px; text-align:center; }
+    </style>
+    <script>
+      function hoverOn(id)  { var v = document.getElementById(id); v.style.opacity = "1"; var m = v.querySelector('video'); if (m) m.play(); }
+      function hoverOff(id) { var v = document.getElementById(id); v.style.opacity = "0"; }
+    </script>
+  </head>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Wanning He</a>
-    <div class="nav-links">
-      <a href="index.html" class="active">about</a>
-      <a href="research.html">research</a>
-      <a href="projects.html">projects</a>
-      <a href="cv.html">cv</a>
-      <a href="life.html">life</a>
-    </div>
-  </div>
-</nav>
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
 
-<main>
+          <!-- ===================== HEADER + BIO ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">Wanning He</p>
+                <p class="slogan">I build generative models of human motion, with sports as my testbed.</p>
+                <p>
+                  I'm a master's student in Computer Science at <a href="https://web.cs.dartmouth.edu/">Dartmouth College</a>, where I work in the Visual AI Lab advised by Prof. Yu-Wing Tai.
+                  Before Dartmouth, I studied statistics (M.S., Shanghai University of Finance and Economics) and mathematics (B.S., Northeastern University, China),
+                  and spent two years as a quantitative researcher at Fourier Capital, a quantitative hedge fund.
+                </p>
+                <p>
+                  I am applying to PhD programs for Fall 2027.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:wanning.he.gr@dartmouth.edu">Email</a> &nbsp;/&nbsp;
+                  <a href="data/WanningHe_CV.pdf">CV</a> &nbsp;/&nbsp;
+                  <!-- <a href="SCHOLAR_URL">Scholar</a> &nbsp;/&nbsp;  TODO: add once Google Scholar profile is live -->
+                  <a href="https://github.com/maxx1031">GitHub</a> &nbsp;/&nbsp;
+                  <a href="https://latents-and-logs.vercel.app/log">Blog</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/profile.jpg"><img style="width:100%;max-width:100%;object-fit:cover;border-radius:50%;" alt="profile photo" src="images/profile.jpg"></a>
+              </td>
+            </tr>
+          </tbody></table>
 
-  <section class="profile">
-    <div class="profile-info">
-      <h1 class="name">Wanning He</h1>
-      <p class="subtitle">MS Student in Computer Science</p>
-      <p class="affiliation">Dartmouth College</p>
-      <p class="affiliation">Advised by Prof. Yu-Wing Tai</p>
-      <p class="meta">wanning.he.gr [at] dartmouth.edu</p>
-    </div>
-    <div class="profile-avatar">
-      <img src="assets/avatar.jpg" alt="Wanning He">
-    </div>
-  </section>
+          <!-- ===================== NEWS ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>News</h2>
+              <table class="news" style="width:100%;margin-top:8px;border:0px;border-spacing:0px;"><tbody>
+                <tr><td class="d">11.2026</td><td>Awarded Dartmouth's <strong>Class of 1961 Arts Initiative Fund</strong> for <em>In Her Corner</em>, a photography project on women in boxing.</td></tr>
+                <tr><td class="d">10.2026</td><td>Won <strong>First Prize</strong> at two NYC hackathons: VAST Builders Challenge (<a href="#fightlens">FightLens</a>) and Daytona HackSprint (<a href="#juststandup">Just Standup</a>); featured in Dartmouth CS <a href="https://web.cs.dartmouth.edu/news/2026/10/kudos-fall-2026">Kudos: Fall 2026</a>.</td></tr>
+              </tbody></table>
+            </td></tr>
+          </tbody></table>
 
-  <section class="bio">
-    <p>My name is Max (Wanning He), and I'm a first-year CS master's student at Dartmouth College, advised by Prof. Yu-Wing Tai. My research focuses on <strong>multi-modal generative models</strong> and <strong>identity-aware visual perception</strong> — currently working on controllable facial editing with diffusion models and MLLMs, and on scaling motion representations with synthetic data.</p>
+          <!-- ===================== RESEARCH ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Research</h2>
+              <p>
+                My research interests lie in building intelligent machines that can perceive, understand, and generate human motion in the dynamic physical world, with sports as a primary testbed.
+                * indicates equal contribution.
+              </p>
+            </td></tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    <p>Before Dartmouth, I spent two years as a quantitative researcher, which shaped how I think about modeling, measurement, and the gap between clean benchmarks and messy reality.</p>
+            <tr>
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="thumb"><img src="images/refroute.jpg" alt="RefRoute"></div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2610.07720"><span class="papertitle">RefRoute: Decoupling Conditioning Cost from References via Compact Residual Conditioning and Spatial Routing</span></a>
+                <br>
+                <strong>Wanning He</strong>*, Yuyao Zhang*, Yu-Wing Tai
+                <br>
+                <em>Under review at ICLR 2027</em>
+                <br>
+                <a href="https://arxiv.org/abs/2610.07720">arXiv</a>
+                <p></p>
+                <p>Compact residual conditioning and spatial routing make multi-reference generation scale with references: 18.3&times; faster than FLUX.2-Klein-9B at 16 references.</p>
+              </td>
+            </tr>
 
-    <p>I'm actively looking for <strong>Summer 2026 research opportunities</strong> in computer vision and generative models. Feel free to reach out.</p>
-  </section>
+            <tr onmouseout="hoverOff('beyondmocap_v')" onmouseover="hoverOn('beyondmocap_v')">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="thumb">
+                  <div class="two" id="beyondmocap_v"><video muted autoplay loop playsinline><source src="images/beyondmocap.mp4" type="video/mp4"></video></div>
+                  <img src="images/beyondmocap.jpg" alt="Beyond MoCap">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2606.27547"><span class="papertitle">Beyond MoCap: Scaling Motion Tokenizers with Synthetic Human Motion for Generative Modeling</span></a>
+                <br>
+                Yiwen Yan, <strong>Wanning He</strong>, Yu-Wing Tai
+                <br>
+                <em>Under review at ICLR 2027</em>
+                <br>
+                <a href="images/beyondmocap_demo.mp4">demo video</a>
+                /
+                <a href="https://arxiv.org/abs/2606.27547">arXiv</a>
+                <p></p>
+                <p>Scaling motion tokenizers with synthetic human motion: the bottleneck is the support of the learned representation, not codebook size. The new tokenizer improves T2M-GPT, MotionGPT, and Motion-Agent with no architecture change.</p>
+              </td>
+            </tr>
 
-  <div class="social social-hero">
-    <a href="mailto:wanning.he.gr@dartmouth.edu" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://github.com/maxx1031" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/wanning-he-353546379" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="#" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-    <a href="cv.html" title="CV"><i class="fas fa-file-lines"></i></a>
-  </div>
+          </tbody></table>
 
-  <hr class="divider">
+          <!-- ===================== SPORTS PROJECTS ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Sports AI Projects</h2>
+            </td></tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-  <section>
-    <h2>News</h2>
-    <div class="news-list">
-      <div class="news-date">May 2026</div>
-      <div>Our paper <em>Beyond MoCap</em> is under review at NeurIPS 2026.</div>
+            <tr id="fightlens" onmouseout="hoverOff('fightlens_v')" onmouseover="hoverOn('fightlens_v')">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="thumb">
+                  <div class="two" id="fightlens_v"><video muted autoplay loop playsinline><source src="images/fightlens.mp4" type="video/mp4"></video></div>
+                  <img src="images/fightlens.jpg" alt="FightLens">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <a href="https://github.com/maxx1031/fightlens"><span class="papertitle">FightLens: Real-Time Combat Sports Analysis</span></a>
+                <br>
+                <em>First Prize</em>, VAST Builders Challenge, New York City, 2026
+                <br>
+                <a href="https://github.com/maxx1031/fightlens#demo-videos">demo</a>
+                /
+                <a href="https://github.com/maxx1031/fightlens">code</a>
+                <p></p>
+                <p>A real-time MMA viewing assistant: fighter tracking, pose overlays, received-strike heatmaps, and evidence-based event analysis.</p>
+              </td>
+            </tr>
 
-      <div class="news-date">Apr 2026</div>
-      <div>Started as TA for <em>Machine Learning and Statistics</em> at Dartmouth.</div>
+            <tr id="juststandup" onmouseout="hoverOff('juststandup_v')" onmouseover="hoverOn('juststandup_v')">
+              <td style="padding:16px;width:25%;vertical-align:middle">
+                <div class="thumb">
+                  <div class="two" id="juststandup_v"><video muted autoplay loop playsinline><source src="images/juststandup.mp4" type="video/mp4"></video></div>
+                  <img src="images/juststandup.jpg" alt="Just Standup">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                <a href="https://devpost.com/software/just-standup"><span class="papertitle">Just Standup: Exercise Anywhere, Anytime</span></a>
+                <br>
+                <em>First Prize</em>, Daytona HackSprint w/ Arize AI, New York City, 2026
+                <br>
+                <a href="https://devpost.com/software/just-standup">devpost</a>
+                <p></p>
+                <p>No equipment, no place, no coach: only a phone. Boxing with the phone's motion sensors, the city as a gym, and an AI 3D coach.</p>
+              </td>
+            </tr>
 
-      <div class="news-date">Nov 2025</div>
-      <div>Joined Dartmouth as an MS student, advised by Prof. Yu-Wing Tai.</div>
+          </tbody></table>
 
-      <div class="news-date">Sep 2025</div>
-      <div>Started as TA for <em>Deep Learning</em> at Dartmouth.</div>
-    </div>
-  </section>
+          <!-- ===================== AWARDS & FUNDING ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Awards and Funding</h2>
+              <table class="news awards" style="width:100%;margin-top:8px;border:0px;border-spacing:0px;"><tbody>
+                <tr><td class="d">2026</td><td><strong>Class of 1961 Arts Initiative Fund</strong> ($3,211) for <em>In Her Corner</em></td><td class="org">Dartmouth College</td></tr>
+                <tr><td class="d">2026</td><td><strong>First Prize</strong> (team, ~$6,950), VAST Builders Challenge for <a href="#fightlens">FightLens</a></td><td class="org">New York City</td></tr>
+                <tr><td class="d">2026</td><td><strong>First Prize</strong> (team, $3,000), Daytona HackSprint w/ Arize AI for <a href="#juststandup">Just Standup</a></td><td class="org">New York City</td></tr>
+                <tr><td class="d">2026</td><td>Both hackathon wins featured in <a href="https://web.cs.dartmouth.edu/news/2026/10/kudos-fall-2026">Kudos: Fall 2026</a></td><td class="org">Dartmouth CS</td></tr>
+                <tr><td class="d">2026</td><td><strong>NSF ACCESS Discover Allocation</strong> (PI)</td><td class="org">NSF ACCESS</td></tr>
+                <tr><td class="d">2026</td><td><strong>OpenAI Researcher Access Program</strong> ($1,000 API credits)</td><td class="org">OpenAI</td></tr>
+                <tr><td class="d">2026</td><td><strong>Merit Scholarship</strong> (100% tuition)</td><td class="org">Dartmouth College</td></tr>
+                <tr><td class="d">2025</td><td><strong>Tuition Scholarship</strong> (75% tuition)</td><td class="org">Dartmouth College</td></tr>
+                <tr><td class="d">2021</td><td><strong>University-level Outstanding Student</strong> (top 3%)</td><td class="org">China</td></tr>
+                <tr><td class="d">2019</td><td><strong>Provincial Outstanding Graduate</strong> (top 0.2%)</td><td class="org">China</td></tr>
+                <tr><td class="d">2017</td><td><strong>National Scholarship</strong> (top 0.2%, ~$1,100)</td><td class="org">China</td></tr>
+              </tbody></table>
+            </td></tr>
+          </tbody></table>
 
-</main>
+          <!-- ===================== MISCELLANEA ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Miscellanea</h2>
+            </td></tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td align="center" style="padding:16px;width:25%;vertical-align:middle">
+                <div class="colored-box" style="background-color:#aaba9e;"><h2>Teaching</h2></div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                Teaching Assistant, Machine Learning and Statistical Analysis (COSC 274), Fall 2026 and Winter 2026
+                <br>
+                Teaching Assistant, Graph-based Machine Learning (COSC 89.39/189.39), Spring 2026
+                <br>
+                Teaching Assistant, Deep Learning (COSC 78/278), Fall 2025
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding:16px;width:25%;vertical-align:middle">
+                <div class="colored-box" style="background-color:#fcb97d;"><h2>Service</h2></div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:middle">
+                Journal Reviewer, International Journal of Computer Vision (IJCV), 2026
+              </td>
+            </tr>
+          </tbody></table>
 
-<footer>
-  © 2026 Wanning He. Built with care.
-</footer>
+          <!-- ===================== BEYOND RESEARCH ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Beyond Research</h2>
+              <!-- Photo slots: replace each <div class="ph">…</div> with
+                   <a href="images/life/NAME.jpg"><img src="images/life/NAME.jpg" alt="NAME"></a> -->
+              <div class="life">
+                <figure><a href="images/life/weightlifting.jpg"><img src="images/life/weightlifting_t.jpg" alt="Weightlifting"></a><figcaption>Weightlifting</figcaption></figure>
+                <figure><a href="images/life/jiujitsu.jpg"><img src="images/life/jiujitsu_t.jpg" alt="Jiu-Jitsu"></a><figcaption>Jiu-Jitsu</figcaption></figure>
+                <figure><a href="images/life/boxing.jpg"><img src="images/life/boxing_t.jpg" alt="Boxing"></a><figcaption>Boxing</figcaption></figure>
+                <figure><a href="images/life/diving.jpg"><img src="images/life/diving_t.jpg" alt="Diving"></a><figcaption>Diving</figcaption></figure>
+                <figure><a href="images/life/crossfit.jpg"><img src="images/life/crossfit_t.jpg" alt="CrossFit"></a><figcaption>CrossFit</figcaption></figure>
+                <figure><a href="images/life/climbing.jpg"><img src="images/life/climbing_t.jpg" alt="Climbing"></a><figcaption>Climbing</figcaption></figure>
+                <figure><a href="images/life/camping.jpg"><img src="images/life/camping_t.jpg" alt="Camping"></a><figcaption>Camping</figcaption></figure>
+                <figure><a href="images/life/hiking_mushrooms.jpg"><img src="images/life/hiking_mushrooms_t.jpg" alt="Nature"></a><figcaption>Nature</figcaption></figure>
+                <figure><a href="images/life/photo_sunset.jpg"><img src="images/life/photo_sunset_t.jpg" alt="Traveling"></a><figcaption>Traveling</figcaption></figure>
+                <figure><a href="images/life/vlog.jpg"><img src="images/life/vlog_t.jpg" alt="Vlogging"></a><figcaption>Vlogging</figcaption></figure>
+              </div>
+              <p>
+                Outside the lab, I'm usually training or outdoors.
+                <br>
+                <strong>Sports:</strong> weightlifting, Brazilian jiu-jitsu (Jiangsu Championship silver), boxing, CrossFit, climbing
+                <br>
+                <strong>Outdoors:</strong> diving, hiking, camping, travel
+                <br>
+                <strong>Creative:</strong> <em>In Her Corner</em>, a photo series on women in boxing &middot; sports vlog (190K+ views)
+              </p>
+            </td></tr>
+          </tbody></table>
 
-</body>
+          <!-- ===================== FOOTER ===================== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr><td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                Website template from <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.
+              </p>
+            </td></tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
 </html>

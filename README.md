@@ -1,42 +1,13 @@
-# Wanning He - Academic Personal Website
+# Wanning He — Academic Homepage
 
-Personal academic page for private faculty review.
+Live at https://maxx1031.github.io/ (GitHub Pages, branch `main`, no build step).
 
-Built as a minimal static site (HTML + CSS, no build step). Prepared for private deployment on Cloudflare Pages.
+Single-page site based on [Jon Barron's template](https://github.com/jonbarron/jonbarron.github.io).
 
-## Structure
+- `index.html` — the whole site (bio, news, research, sports AI projects, miscellanea, beyond research)
+- `stylesheet.css` — Jon Barron's stylesheet (unchanged); small additions are inline in `index.html`
+- `images/` — profile photo, paper/project thumbnails (`.jpg`) and hover clips (`.mp4`)
+- `images/life/` — Beyond Research photos (weightlifting, jiu-jitsu, boxing, diving, CrossFit, travel, photography)
+- `data/WanningHe_CV.pdf` — CV (copy of `0-RA/申请材料_ACCESS/PhD_Application_Materials/WanningHe_Research_CV_v1.pdf`)
 
-- `index.html` — About / homepage
-- `research.html` — Research interests + publications
-- `projects.html` — Project highlights
-- `cv.html` — Curriculum vitae
-- `style.css` — Shared stylesheet
-- `assets/` — Avatar + project cover images
-- `functions/_middleware.js` — Cloudflare Pages Basic Auth gate
-- `_headers` — no-index and basic security headers
-
-## Cloudflare Pages Deployment
-
-Create a Cloudflare Pages project from this repository/directory:
-
-- Framework preset: `None`
-- Production branch: `main`
-- Build command: `exit 0`
-- Build output directory: `.`
-
-If importing from a larger repository instead of this `website_preview` repository, set the project root directory to `website_preview` first.
-
-Set these Cloudflare Pages environment variables before deploying:
-
-- `BASIC_AUTH_USER`
-- `BASIC_AUTH_PASSWORD`
-
-The middleware fails closed if either variable is missing, so the site will return a 500 error instead of becoming public by accident.
-
-After deployment, send the teacher:
-
-- the Cloudflare Pages URL
-- the username
-- the password
-
-Do not commit the password into this repository.
+The previous 5-page site is archived at `~/_archive/website_old_5page_2026-11/` and in git history.
